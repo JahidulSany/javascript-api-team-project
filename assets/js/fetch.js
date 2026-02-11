@@ -1,5 +1,5 @@
 fetch(
-  'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d199684dc0a64bfeb06f85cc8baa0aaf',
+  'https://newsapi.org/v2/top-headlines?country=us&apiKey=d199684dc0a64bfeb06f85cc8baa0aaf',
 )
   .then((response) => response.json())
   .then((data) => displayNews(data))
