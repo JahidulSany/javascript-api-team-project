@@ -8,7 +8,7 @@ const getCoordinates = (city) => {
     .then((res) => res.json())
     .then((data) => {
       if (!data.length) {
-        throw new Error('City not found.');
+        throw new Error('City not found. Please enter a valid city name, thanks.');
       }
       return {
         lat: data[0].lat,
@@ -118,7 +118,8 @@ const handleUserInput = () => {
 
   // Empty validation
   if (!city) {
-    alert('Please enter a city name.');
+    const weatherContainer = document.getElementById('weatherContainer');
+    weatherContainer.innerHTML = `<p class="text-bolder text-danger">Cannot be empty! Please enter a city name</p>`;
     return;
   }
 
@@ -138,10 +139,14 @@ const formatTime = (timestamp, timezoneOffset) => {
   });
 };
 
+
+// -----------------**************###########*************---------------//
+// -----------------**************###########*************---------------//
+// -----------------**************###########*************---------------//
+// -----------------**************###########*************---------------//
+
 /// News API JS
-
 const APIkey = 'd199684dc0a64bfeb06f85cc8baa0aaf';
-
 fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${APIkey}`)
   .then((response) => response.json())
   .then((data) => displayNews(data))
