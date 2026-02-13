@@ -67,6 +67,14 @@ img {
 
 /* Global CSS Style Ends Here */
 
+/* Weather API Styles */
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 12px 50px;
+}
+
 /* Footer Styles */
 footer {
   padding: 35px 0;
